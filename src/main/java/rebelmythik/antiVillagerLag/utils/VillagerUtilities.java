@@ -126,7 +126,7 @@ public class VillagerUtilities {
     public static void updateRestockTimes(AntiVillagerLag plugin) {
         restock_times.clear();
         for (long restockTime : plugin.getConfig().getLongList("RestockTimes.times")) {
-            restock_times.add(restockTime);
+            restock_times.add(Long.valueOf(restockTime));
         }
     }
 
@@ -147,6 +147,7 @@ public class VillagerUtilities {
         for (MerchantRecipe r: recipes) {
             r.setUses(0);
         }
+        v.setRecipes(recipes);
     }
 
 }
